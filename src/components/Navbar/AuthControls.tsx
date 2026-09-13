@@ -9,7 +9,7 @@ const AuthControls = () => {
       </a>
       <a
         href="#signup"
-        className="btn h-auto min-h-0 rounded-full border-none bg-brand-button px-3 py-1 text-[11px] leading-4 font-semibold text-white shadow-none drop-shadow-[0_1px_1px_var(--color-brand-soft)] hover:bg-brand lg:px-5 lg:py-2.5 lg:text-sm lg:leading-5"
+        className="btn h-auto min-h-0 rounded-full border-none bg-brand-gradient px-3 py-1 text-[11px] leading-4 font-semibold text-white shadow-none drop-shadow-[0_1px_1px_var(--color-brand-soft)] hover:brightness-105 lg:px-5 lg:py-2.5 lg:text-sm lg:leading-5"
       >
         Sign Up
       </a>

@@ -6,7 +6,7 @@ const Hero = () => {
       <div className="flex flex-col items-center gap-[11.3px] sm:gap-0 lg:col-span-7 lg:items-start lg:pr-8">
         <h1 className="font-inter text-3xl leading-[37.5px] font-bold tracking-[-0.75px] text-[#030712] sm:pb-6 sm:text-6xl sm:leading-15 sm:font-extrabold sm:tracking-[-1.5px] sm:text-heading">
           Build Your Ideal
-          <span className="block bg-linear-to-br from-[#ff5722] from-15% via-[#e91e63] via-55% to-[#9c27b0] to-90% bg-clip-text text-transparent sm:bg-linear-to-r sm:from-[#ff5722] sm:from-0% sm:via-[#d81b7e] sm:via-50% sm:to-[#7c3aed] sm:to-100%">
+          <span className="text-brand-gradient block">
             Development Stack
           </span>
         </h1>
@@ -17,7 +17,7 @@ const Hero = () => {
         <div className="flex flex-wrap items-center justify-center gap-3 pt-3 sm:pt-0 lg:justify-start">
           <a
             href="#technologies"
-            className="btn h-auto min-h-0 min-w-42 rounded-lg border-none bg-linear-to-r from-[#f97316] to-[#ec4899] px-4 py-3 font-inter text-xs leading-4 font-normal whitespace-nowrap text-white shadow-none drop-shadow-[0_1px_1px_rgba(0,0,0,0.05)] hover:brightness-105 sm:text-sm sm:font-semibold"
+            className="btn h-auto min-h-0 min-w-42 rounded-lg border-none bg-brand-gradient px-4 py-3 font-inter text-xs leading-4 font-normal whitespace-nowrap text-white shadow-none drop-shadow-[0_1px_1px_rgba(0,0,0,0.05)] hover:brightness-105 sm:text-sm sm:font-semibold"
           >
             Explore Technologies
           </a>

@@ -1,5 +1,5 @@
 import star from "../../assets/star.svg";
-import type { BadgeTone, Technology } from "../../data/technologies";
+import type { BadgeTone, Technology } from "../../types/technology";
 
 const badgeTones: Record<BadgeTone, string> = {
   sky: "bg-[#e0f2fe] text-[#0369a1] sm:bg-[#f0f9ff] sm:border-[#e0f2fe] sm:text-[#0284c7]",
@@ -14,11 +14,11 @@ const badgeTones: Record<BadgeTone, string> = {
 type TechCardProps = {
   tech: Technology;
   selected: boolean;
-  onToggle: (tech: Technology) => void;
+  onAdd: (tech: Technology) => void;
 };
 
-const TechCard = ({ tech, selected, onToggle }: TechCardProps) => {
-  const { name, logo, logoInset, logoBg, description, badge, category, level, rating } = tech;
+const TechCard = ({ tech, selected, onAdd }: TechCardProps) => {
+  const { name, icon, iconInset, iconBg, description, badge, badgeTone = "sky", category, difficulty, rating } = tech;
 
   return (
     <article
@@ -30,13 +30,13 @@ const TechCard = ({ tech, selected, onToggle }: TechCardProps) => {
         <div className="grid grid-cols-[auto_1fr_auto] items-center gap-x-3 sm:grid-cols-[1fr_auto] sm:items-start">
           <div
             className="col-start-1 row-start-1 flex size-10 items-center justify-center rounded-lg sm:bg-transparent!"
-            style={{ backgroundColor: logoBg }}
+            style={{ backgroundColor: iconBg }}
           >
             <div className="flex size-6 items-center justify-center transition-transform duration-300 group-hover:scale-110 sm:size-7">
               <img
-                src={logo}
+                src={icon}
                 alt={`${name} logo`}
-                style={{ width: logoInset?.width ?? "100%", height: logoInset?.height ?? "100%" }}
+                style={{ width: iconInset?.width ?? "100%", height: iconInset?.height ?? "100%" }}
               />
             </div>
           </div>
@@ -45,9 +45,9 @@ const TechCard = ({ tech, selected, onToggle }: TechCardProps) => {
           </h3>
           {badge && (
             <span
-              className={`col-start-3 row-start-1 self-start justify-self-end rounded-full px-2 py-0.5 text-[10.4px] leading-[15.6px] font-bold tracking-[0.208px] sm:col-start-2 sm:border sm:px-[11.4px] sm:py-[3px] sm:text-[11.5px] sm:leading-[17.28px] sm:font-semibold sm:tracking-normal ${badgeTones[badge.tone]}`}
+              className={`col-start-3 row-start-1 self-start justify-self-end rounded-full px-2 py-0.5 text-[10.4px] leading-[15.6px] font-bold tracking-[0.208px] sm:col-start-2 sm:border sm:px-[11.4px] sm:py-[3px] sm:text-[11.5px] sm:leading-[17.28px] sm:font-semibold sm:tracking-normal ${badgeTones[badgeTone]}`}
             >
-              {badge.label}
+              {badge}
             </span>
           )}
         </div>
@@ -57,7 +57,7 @@ const TechCard = ({ tech, selected, onToggle }: TechCardProps) => {
       <div className="flex flex-col gap-[9.3px] sm:gap-4">
         <div className="flex items-center justify-between border-t border-[#f9fafb] pt-[13.7px] text-[11px] leading-[16.5px] sm:border-slate-50 sm:pt-2.25 sm:font-medium">
           <span className="rounded bg-[#f3f4f6] px-2 py-0.5 text-[#4b5563] sm:bg-slate-100/80 sm:text-body">{category}</span>
-          <span className="text-[#6b7280] sm:text-slate-500">{level}</span>
+          <span className="text-[#6b7280] sm:text-slate-500">{difficulty}</span>
           <span className="flex items-center gap-1 text-[#f59e0b] sm:gap-1.25 sm:font-semibold sm:text-muted">
             <span className="sm:hidden">★</span>
             <img src={star} alt="" className="hidden h-[9px] w-[9.285px] sm:block" />
@@ -65,12 +65,15 @@ const TechCard = ({ tech, selected, onToggle }: TechCardProps) => {
           </span>
         </div>
         <button
-          onClick={() => onToggle(tech)}
-          className={`btn h-auto min-h-0 w-full rounded-lg border-none py-2.5 text-xs leading-4 font-normal text-white shadow-none sm:font-medium ${
-            selected ? "bg-brand hover:bg-brand-button" : "bg-[#111827] hover:bg-slate-800 sm:bg-[#0a0f1d]"
+          onClick={() => onAdd(tech)}
+          aria-disabled={selected}
+          className={`btn h-auto min-h-0 w-full rounded-lg border-none py-2.5 text-xs leading-4 font-normal shadow-none sm:font-medium ${
+            selected
+              ? "pointer-events-auto cursor-not-allowed bg-slate-100 text-slate-400 hover:bg-slate-100"
+              : "bg-[#111827] text-white hover:bg-slate-800 sm:bg-[#0a0f1d]"
           }`}
         >
-          {selected ? "Remove from Stack" : "Add to Stack"}
+          {selected ? "✓ Added to Stack" : "Add to Stack"}
         </button>
       </div>
     </article>

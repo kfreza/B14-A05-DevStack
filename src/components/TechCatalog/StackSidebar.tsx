@@ -1,5 +1,5 @@
 import { HiXMark } from "react-icons/hi2";
-import type { Technology } from "../../data/technologies";
+import type { Technology } from "../../types/technology";
 
 type StackSidebarProps = {
   stack: Technology[];
@@ -25,7 +25,7 @@ const StackSidebar = ({ stack, onRemove, onClear }: StackSidebarProps) => {
             {stack.map((tech) => (
               <li key={tech.id} className="flex items-center gap-3 rounded-xl border border-slate-100 p-2">
                 <div className="flex size-6 items-center justify-center">
-                  <img src={tech.logo} alt="" className="max-h-6 max-w-6 object-contain" />
+                  <img src={tech.icon} alt="" className="max-h-6 max-w-6 object-contain" />
                 </div>
                 <div className="flex-1">
                   <p className="text-sm leading-5 font-semibold text-heading">{tech.name}</p>

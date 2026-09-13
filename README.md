@@ -1,32 +1,60 @@
-# React + TypeScript + Vite
+# 🧱 Dev Stack
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Dev Stack is a small website where you can explore different technologies like frontend, backend, database & devops tools, and build your own dev stack by adding them to a list. You can see each tech's rating, difficulty & category before adding it.
 
-Currently, two official plugins are available:
+🔗 Live Site: [b14-a05-dev-stack-zeta.vercel.app](https://b14-a05-dev-stack-zeta.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🛠️ Technology I used
 
-## React Compiler
+- React (with TypeScript)
+- Vite
+- Tailwind CSS & DaisyUI
+- React Toastify
+- React Icons
+- JSON file for the technology data
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Features
 
-## Expanding the Oxlint configuration
+1. **Build your own stack** - click "Add to Stack" on any card and it shows up in the "Your Stack" panel. You can remove one item with the ✕ button or clear everything with "Remove All". If you try to add the same tech twice, it shows a warning.
+2. **Data loads from JSON** - all technologies come from a JSON file, loaded with fetch. A loading spinner shows while the data is coming.
+3. **Fully responsive** - works on mobile, tablet & desktop. On mobile the navbar changes to a hamburger menu with the logo in center, and cards go to 1 column.
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+---
 
-```json
+## ❓ React Questions
+
+### 1. What is JSX, and why is it used in React?
+
+JSX lets us write HTML-like code inside JavaScript. React uses it because it's much easier to read & write UI this way, instead of calling `React.createElement` again and again. In the end it gets converted to normal JavaScript.
+
+### 2. What is the difference between props and state?
+
+Props come from the parent component, and the child can't change them, only read them. State is the component's own data, and it can change. When state changes, the component re-renders.
+
+### 3. What does the `useState` hook do, and where did you use it in this project?
+
+`useState` lets a component keep data that can change and update the UI when it changes. In this project I used it in `TechCatalog` for storing the technologies list, the loading & error status, and the stack (the technologies the user added).
+
+### 4. What does the `useEffect` hook do, and why did you need it to load the JSON data?
+
+`useEffect` runs code after the component renders, like fetching data. I needed it to fetch the JSON file only once when the page loads. If I fetched directly inside the component, it would fetch again on every render and could get stuck in a loop.
+
+### 5. Why does every item in a `.map()` list need a unique `key` prop?
+
+React uses the key to know which item is which. When something is added, removed or changed, it only updates that item instead of re-rendering the whole list. I used `tech.id` as the key for the cards and the stack items.
+
+### 6. What is conditional rendering? Show one place you used it.
+
+Conditional rendering means showing different UI depending on a condition. In the "Your Stack" panel, if the stack is empty it shows "Your stack is empty.", otherwise it shows the selected items:
+
+```jsx
 {
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
+  stack.length === 0 ? <div>Your stack is empty.</div> : <ul>...</ul>;
 }
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+I also used it for the loading spinner and the "✓ Added to Stack" button text.
+
+### 7. How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
+
+Parent sends data to child using props, like `<TechCard tech={tech} />`. For sending something back, the parent passes a function as a prop and the child calls it. For example, `TechCatalog` passes `onAdd` to `TechCard`, and when the button is clicked the card calls `onAdd(tech)`, so the parent adds it to the stack.

@@ -6,16 +6,30 @@
   --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
   --font-inter: "Inter", ui-sans-serif, system-ui, sans-serif;
   --color-brand: #db2777;
-  --color-brand-button: #d91b7e;
   --color-brand-soft: #fbcfe8;
   --color-heading: #0f172a;
   --color-body: #475569;
   --color-muted: #334155;
 }
 
+:root {
+  --brand-gradient: linear-gradient(90deg, #f97316 0%, #ec4899 50%, #8b5cf6 100%);
+}
+
+@utility bg-brand-gradient {
+  background-image: var(--brand-gradient);
+}
+
+@utility text-brand-gradient {
+  background-image: var(--brand-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
 .Toastify {
   --toastify-color-error: #dc2626;
-  --toastify-color-progress-error: linear-gradient(to right, #f97316, #ec4899);
+  --toastify-color-progress-error: var(--brand-gradient);
   --toastify-color-progress-success: linear-gradient(to right, #4ade80, #07bc0c);
   --toastify-color-progress-warning: linear-gradient(to right, #fde047, #f1c40f);
   --toastify-icon-color-error: #dc2626;

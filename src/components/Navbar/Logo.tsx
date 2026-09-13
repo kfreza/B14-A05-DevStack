@@ -14,12 +14,12 @@ const Logo = ({ size = "md" }: LogoProps) => {
   return (
     <a href="#" className={`flex items-center ${s.gap}`}>
       <span
-        className={`flex items-center justify-center bg-linear-45 from-[#ec4899] to-[#7c3aed] font-black text-white drop-shadow-[0_1px_1px_rgba(0,0,0,0.05)] ${s.badge}`}
+        className={`flex items-center justify-center bg-brand-gradient font-black text-white drop-shadow-[0_1px_1px_rgba(0,0,0,0.05)] ${s.badge}`}
       >
         DS
       </span>
       <span className={`font-bold text-heading ${s.text}`}>
-        Dev <span className="font-extrabold text-brand">Stack</span>
+        Dev <span className="text-brand-gradient font-extrabold">Stack</span>
       </span>
     </a>
   );
