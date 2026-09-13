@@ -11,7 +11,7 @@ const TechCatalog = () => {
   const toggleTech = (tech: Technology) => {
     if (stack.some((t) => t.id === tech.id)) {
       setStack(stack.filter((t) => t.id !== tech.id));
-      toast.info(`${tech.name} removed from your stack`);
+      toast.error(`${tech.name} removed from your stack`);
       return;
     }
 

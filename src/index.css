@@ -12,3 +12,19 @@
   --color-body: #475569;
   --color-muted: #334155;
 }
+
+/* "Removed from stack" toast: light red, matching the design's red badge tone. */
+.Toastify {
+  --toastify-color-error: #dc2626;
+  /* Progress bars: remove uses the brand gradient; add/replace keep their colour as a gradient. */
+  --toastify-color-progress-error: linear-gradient(to right, #f97316, #ec4899);
+  --toastify-color-progress-success: linear-gradient(to right, #4ade80, #07bc0c);
+  --toastify-color-progress-warning: linear-gradient(to right, #fde047, #f1c40f);
+  --toastify-icon-color-error: #dc2626;
+}
+
+.Toastify .Toastify__toast.Toastify__toast--error {
+  background: #fef2f2;
+  border: 1px solid #fee2e2;
+  color: #dc2626;
+}
