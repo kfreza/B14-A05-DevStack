@@ -17,13 +17,13 @@ const Hero = () => {
         <div className="flex flex-wrap items-center gap-3">
           <a
             href="#technologies"
-            className="btn h-auto min-h-0 w-42 rounded-lg border-none bg-linear-to-r from-[#f97316] to-[#ec4899] px-4 py-3 font-inter text-sm leading-4 font-semibold text-white shadow-none drop-shadow-[0_1px_1px_rgba(0,0,0,0.05)] hover:brightness-105"
+            className="btn h-auto min-h-0 min-w-42 rounded-lg whitespace-nowrap border-none bg-linear-to-r from-[#f97316] to-[#ec4899] px-4 py-3 font-inter text-sm leading-4 font-semibold text-white shadow-none drop-shadow-[0_1px_1px_rgba(0,0,0,0.05)] hover:brightness-105"
           >
             Explore Technologies
           </a>
           <a
             href="#about"
-            className="btn h-auto min-h-0 w-42.5 rounded-lg border border-[#e5e7eb] bg-white px-4 py-3 font-inter text-sm leading-4 font-normal text-[#374151] shadow-none hover:bg-slate-50"
+            className="btn h-auto min-h-0 min-w-42.5 rounded-lg whitespace-nowrap border border-[#e5e7eb] bg-white px-4 py-3 font-inter text-sm leading-4 font-normal text-[#374151] shadow-none hover:bg-slate-50"
           >
             Learn More
           </a>
