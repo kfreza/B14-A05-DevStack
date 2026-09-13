@@ -4,9 +4,10 @@ import type { Technology } from "../../data/technologies";
 type StackSidebarProps = {
   stack: Technology[];
   onRemove: (tech: Technology) => void;
+  onClear: () => void;
 };
 
-const StackSidebar = ({ stack, onRemove }: StackSidebarProps) => {
+const StackSidebar = ({ stack, onRemove, onClear }: StackSidebarProps) => {
   return (
     <aside className="lg:sticky lg:top-6">
       <div className="flex flex-col gap-1 rounded-2xl border border-slate-100 bg-white p-5 drop-shadow-[0_1px_1px_rgba(0,0,0,0.05)]">
@@ -40,6 +41,15 @@ const StackSidebar = ({ stack, onRemove }: StackSidebarProps) => {
               </li>
             ))}
           </ul>
+        )}
+
+        {stack.length > 0 && (
+          <button
+            onClick={onClear}
+            className="btn mt-8 h-auto min-h-0 w-full rounded-lg border border-[#fecaca] bg-white py-2.5 text-sm leading-5 font-bold text-[#dc2626] shadow-none hover:border-[#fca5a5] hover:bg-[#fef2f2]"
+          >
+            Remove All
+          </button>
         )}
       </div>
     </aside>

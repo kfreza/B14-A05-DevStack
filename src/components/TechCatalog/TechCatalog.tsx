@@ -24,6 +24,11 @@ const TechCatalog = () => {
     }
   };
 
+  const clearStack = () => {
+    setStack([]);
+    toast.error(`All technologies removed from your stack`);
+  };
+
   return (
     <section
       id="technologies"
@@ -48,7 +53,7 @@ const TechCatalog = () => {
           ))}
         </div>
         <div className="lg:col-span-3 lg:self-stretch">
-          <StackSidebar stack={stack} onRemove={toggleTech} />
+          <StackSidebar stack={stack} onRemove={toggleTech} onClear={clearStack} />
         </div>
       </div>
     </section>
