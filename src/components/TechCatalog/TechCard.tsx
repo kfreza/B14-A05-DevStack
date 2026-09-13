@@ -1,7 +1,6 @@
 import star from "../../assets/star.svg";
 import type { BadgeTone, Technology } from "../../data/technologies";
 
-// Mobile: solid tint, no border. sm+: lighter tint with border.
 const badgeTones: Record<BadgeTone, string> = {
   sky: "bg-[#e0f2fe] text-[#0369a1] sm:bg-[#f0f9ff] sm:border-[#e0f2fe] sm:text-[#0284c7]",
   emerald: "bg-[#d1fae5] text-[#047857] sm:bg-[#ecfdf5] sm:border-[#d1fae5] sm:text-[#059669]",

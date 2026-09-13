@@ -9,7 +9,7 @@ type StackSidebarProps = {
 
 const StackSidebar = ({ stack, onRemove, onClear }: StackSidebarProps) => {
   return (
-    <aside className="lg:sticky lg:top-6">
+    <aside className="lg:sticky lg:top-24">
       <div className="flex flex-col gap-1 rounded-2xl border border-slate-100 bg-white p-5 drop-shadow-[0_1px_1px_rgba(0,0,0,0.05)]">
         <h3 className="text-base leading-6 font-bold text-heading">Your Stack</h3>
         <p className="pb-3 text-xs leading-4 text-slate-400">

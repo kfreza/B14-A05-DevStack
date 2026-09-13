@@ -19,7 +19,6 @@ export type Technology = {
   logo: string;
   /** Leaf size relative to the square logo box, for logos that aren't square exports. */
   logoInset?: { width: string; height: string };
-  /** Tile colour behind the logo on mobile. */
   logoBg: string;
   description: string;
   badge?: { label: string; tone: BadgeTone };

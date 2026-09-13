@@ -5,8 +5,8 @@ import NavLinks from "./NavLinks";
 
 const Navbar = () => {
   return (
-    <header className="border-b border-slate-100 bg-white">
-      {/* Below lg: 3 equal-sided columns so the logo stays truly centred. lg+: logo | links | auth. */}
+    <header className="sticky top-0 z-50 border-b border-slate-100 bg-white">
+      {/* Equal outer grid columns keep the mobile logo centred regardless of auth button width. */}
       <nav className="navbar mx-auto grid h-14 min-h-0 max-w-7xl grid-cols-[1fr_auto_1fr] gap-2 px-4 lg:flex lg:h-20 lg:justify-between lg:px-8">
         <div className="flex items-center lg:flex-1">
           <div className="dropdown lg:hidden">

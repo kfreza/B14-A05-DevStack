@@ -5,7 +5,6 @@ type LogoProps = {
 const sizes = {
   md: { gap: "gap-2.5", badge: "size-8 rounded-lg text-sm tracking-[-0.5px]", text: "text-xl leading-7 tracking-[-0.5px]" },
   sm: { gap: "gap-2.5", badge: "size-6 rounded-md text-xs leading-4", text: "text-lg leading-7" },
-  // Mobile header
   xs: { gap: "gap-2", badge: "size-6 rounded-[5px] text-[10px] tracking-[-0.5px]", text: "font-inter text-[13px] leading-7 tracking-[-0.45px] whitespace-nowrap" },
 };
 

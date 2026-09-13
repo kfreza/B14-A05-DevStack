@@ -32,7 +32,7 @@ const TechCatalog = () => {
   return (
     <section
       id="technologies"
-      className="mx-auto flex max-w-md flex-col gap-5 px-4 pb-28 sm:max-w-7xl sm:gap-10 sm:pt-20 sm:pb-32 md:px-8 lg:pt-28"
+      className="mx-auto flex max-w-md scroll-mt-14 flex-col gap-5 px-4 lg:scroll-mt-0 pb-28 sm:max-w-7xl sm:gap-10 sm:pt-20 sm:pb-32 md:px-8 lg:pt-28"
     >
       <div className="flex flex-col gap-1 text-center sm:gap-2 sm:text-left">
         <h2 className="font-inter text-2xl leading-8 font-bold tracking-[-0.6px] text-[#111827] sm:text-4xl sm:leading-10 sm:font-extrabold sm:tracking-[-0.9px] sm:text-heading">

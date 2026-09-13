@@ -32,7 +32,6 @@ const Hero = () => {
 
       <div className="flex h-74 items-center justify-center pt-5 sm:h-105 sm:pt-0 lg:col-span-5">
         <div className="relative flex size-66 items-center justify-center sm:size-87.5">
-          {/* Mobile: soft pink/purple glow. sm+: white ambient glows. */}
           <div className="absolute inset-0 rounded-full bg-linear-45 from-[#f472b6]/20 to-[#c084fc]/20 blur-[20px] sm:hidden" />
           <div className="absolute -top-6 -left-6 hidden size-56 rounded-full bg-white/25 blur-[32px] sm:block" />
           <div className="absolute -right-6 -bottom-6 hidden size-56 rounded-full bg-white/25 blur-[32px] sm:block" />
