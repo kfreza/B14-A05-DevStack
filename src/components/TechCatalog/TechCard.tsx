@@ -22,14 +22,14 @@ const TechCard = ({ tech, selected, onToggle }: TechCardProps) => {
 
   return (
     <article
-      className={`card flex h-full flex-col justify-between rounded-2xl border bg-white p-5 shadow-[0_2px_10px_-3px_rgba(0,0,0,0.05)] ${
-        selected ? "border-brand" : "border-slate-100"
+      className={`group card flex h-full flex-col justify-between rounded-2xl border bg-white p-5 shadow-[0_2px_10px_-3px_rgba(0,0,0,0.05)] transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_16px_32px_-12px_rgba(219,39,119,0.25)] ${
+        selected ? "border-brand" : "border-slate-100 hover:border-brand-soft"
       }`}
     >
       <div className="flex flex-col gap-1.5 pb-4">
         <div className="flex items-start justify-between">
           <div className="flex size-10 items-center justify-center">
-            <div className="flex size-7 items-center justify-center">
+            <div className="flex size-7 items-center justify-center transition-transform duration-300 group-hover:scale-110">
               <img src={logo} alt={`${name} logo`} width={logoSize.width} height={logoSize.height} style={logoSize} />
             </div>
           </div>
@@ -39,7 +39,7 @@ const TechCard = ({ tech, selected, onToggle }: TechCardProps) => {
             </span>
           )}
         </div>
-        <h3 className="pt-1.5 text-lg leading-7 font-bold text-heading">{name}</h3>
+        <h3 className="pt-1.5 text-lg leading-7 font-bold text-heading transition-colors group-hover:text-brand">{name}</h3>
         <p className="text-xs leading-[19.5px] text-slate-500">{description}</p>
       </div>
 
