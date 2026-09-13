@@ -17,8 +17,10 @@ export type Technology = {
   id: string;
   name: string;
   logo: string;
-  /** Exported leaf size in px when the logo isn't the default 28×28. */
-  logoSize?: { width: number; height: number };
+  /** Leaf size relative to the square logo box, for logos that aren't square exports. */
+  logoInset?: { width: string; height: string };
+  /** Tile colour behind the logo on mobile. */
+  logoBg: string;
   description: string;
   badge?: { label: string; tone: BadgeTone };
   category: string;
@@ -31,7 +33,8 @@ export const technologies: Technology[] = [
     id: "react",
     name: "React",
     logo: react,
-    logoSize: { width: 27.39, height: 24.46 },
+    logoInset: { width: "97.82%", height: "87.34%" },
+    logoBg: "#f0f9ff",
     description: "A declarative, component-based JavaScript library for building modern user interfaces.",
     badge: { label: "Popular", tone: "sky" },
     category: "Frontend",
@@ -42,6 +45,7 @@ export const technologies: Technology[] = [
     id: "vue",
     name: "Vue.js",
     logo: vue,
+    logoBg: "#ecfdf5",
     description: "An approachable, performant, and versatile framework for building web user interfaces.",
     badge: { label: "Versatile", tone: "emerald" },
     category: "Frontend",
@@ -52,6 +56,7 @@ export const technologies: Technology[] = [
     id: "svelte",
     name: "Svelte",
     logo: svelte,
+    logoBg: "#fff7ed",
     description: "Cybernetically enhanced web apps with compile-time reactivity and zero virtual DOM overhead.",
     badge: { label: "Fast", tone: "orange" },
     category: "Frontend",
@@ -62,6 +67,7 @@ export const technologies: Technology[] = [
     id: "nextjs",
     name: "Next.js",
     logo: nextjs,
+    logoBg: "#ffffff",
     description: "The React framework for full-stack web applications with hybrid static & server rendering.",
     category: "Frontend",
     level: "Intermediate",
@@ -71,6 +77,7 @@ export const technologies: Technology[] = [
     id: "nodejs",
     name: "Node.js",
     logo: nodejs,
+    logoBg: "#f0fdf4",
     description: "An asynchronous event-driven JavaScript runtime built on Chrome's V8 engine.",
     badge: { label: "Standard", tone: "emerald" },
     category: "Backend",
@@ -81,6 +88,7 @@ export const technologies: Technology[] = [
     id: "postgresql",
     name: "PostgreSQL",
     logo: postgresql,
+    logoBg: "#eef2ff",
     description: "A powerful, open-source object-relational database system with proven reliability.",
     badge: { label: "Top SQL", tone: "blue" },
     category: "Database",
@@ -91,6 +99,7 @@ export const technologies: Technology[] = [
     id: "redis",
     name: "Redis",
     logo: redis,
+    logoBg: "#fef2f2",
     description: "In-memory data structure store used as a high-speed database, cache, and message broker.",
     badge: { label: "Cache", tone: "red" },
     category: "Database",
@@ -101,6 +110,7 @@ export const technologies: Technology[] = [
     id: "javascript",
     name: "JavaScript",
     logo: javascript,
+    logoBg: "#fffbeb",
     description: "The versatile, ubiquitous scripting language powering dynamic behavior across the web.",
     badge: { label: "Ubiquitous", tone: "amber" },
     category: "Language",
@@ -111,6 +121,7 @@ export const technologies: Technology[] = [
     id: "typescript",
     name: "TypeScript",
     logo: typescript,
+    logoBg: "#eff6ff",
     description: "A strongly typed programming language that builds on JavaScript for robust tooling.",
     badge: { label: "Essential", tone: "sky" },
     category: "Language",
@@ -121,6 +132,7 @@ export const technologies: Technology[] = [
     id: "java",
     name: "Java",
     logo: java,
+    logoBg: "#fff7ed",
     description: "A secure, object-oriented programming language designed for portability and scale.",
     badge: { label: "Robust", tone: "sky" },
     category: "Language",
@@ -131,6 +143,7 @@ export const technologies: Technology[] = [
     id: "tailwind",
     name: "Tailwind CSS",
     logo: tailwind,
+    logoBg: "#ecfeff",
     description: "A utility-first CSS framework packed with classes that can be composed to build custom UI.",
     badge: { label: "Modern", tone: "cyan" },
     category: "Styling",
@@ -141,6 +154,7 @@ export const technologies: Technology[] = [
     id: "docker",
     name: "Docker",
     logo: docker,
+    logoBg: "#eff6ff",
     description: "A platform designed to build, share, and run containerized applications reliably.",
     badge: { label: "Containers", tone: "sky" },
     category: "DevOps",

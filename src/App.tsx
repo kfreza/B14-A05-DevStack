@@ -13,7 +13,7 @@ function App() {
         <TechCatalog />
       </main>
       <Footer />
-      <ToastContainer position="top-right" autoClose={2500} newestOnTop />
+      <ToastContainer position="bottom-right" autoClose={2500} />
     </>
   );
 }
